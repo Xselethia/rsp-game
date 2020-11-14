@@ -8,9 +8,26 @@ function userClicked(params) {
   document.getElementById("result_span").innerHTML = result;
 }
 function compareResults(userData, aiData) {
+  const aiWin = "You Lose!";
+  const userWin = "You win!";
   if (userData === aiData) {
     console.log("Draw!")
     return "Draw"
   }
-  // if (userData)
+  if (
+    (userData === "Rock" && aiData === "Paper") ||
+    (userData === "Paper" && aiData === "Scissors") ||
+    (userData === "Scissors" && aiData === "Rock")
+  ) {
+    console.log("You lose!")
+    return aiWin;
+  }
+  if (
+    (userData === "Rock" && aiData === "Scissors") ||
+    (userData === "Paper" && aiData === "Rock") ||
+    (userData === "Scissors" && aiData === "Paper")
+  ) {
+    console.log("You win!")
+    return userWin;
+  }
 }
