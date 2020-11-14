@@ -2,29 +2,40 @@
 <html>
 
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Rock-Scissors-Paper Game</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Rock-Scissors-Paper Game</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
 </head>
 
 <body>
-    <h1>Choose your button!</h1>
-    <div class="fl-container">
-        <div class="fl-button"><button onclick="userClicked('Rock')">ROCK</button></div>
-        <div class="fl-button"><button onclick="userClicked('Paper')">PAPER</button></div>
-        <div class="fl-button"><button onclick="userClicked('Scissors')">SCISSORS</button></div>
-    </div>
-    <div class="fl-container" style="padding:1em;">
-        <div> AI CHOICE : <span id="ai_choice_span"></span>
-        </div>
-    </div>
-    <div class="fl-container" style="padding:1em;">
-        <div>RESULT:<span id="result_span"></span></div>
-    </div>
+  <h1>Choose your button!</h1>
 
-    <script src='js/main.js'></script>
+
+  <div class="fl-container">
+    <div class="fl-button">
+      <div class="fl-scissors" onclick="userClicked('Rock')"></div>
+      <!-- <button onclick="userClicked('Rock')">ROCK</button> -->
+    </div>
+    <div class="fl-button">
+      <div class="fl-scissors" onclick="userClicked('Paper')"></div>
+      <!-- <button onclick="userClicked('Paper')">PAPER</button> -->
+    </div>
+    <div class="fl-button">
+      <div class="fl-scissors" onclick="userClicked('Scissors')"></div>
+      <!-- <button onclick="userClicked('Scissors')">SCISSORS</button> -->
+    </div>
+  </div>
+  <div class="fl-container" style="padding:1em;">
+    <div> AI CHOICE : <span id="ai_choice_span"></span>
+    </div>
+  </div>
+  <div class="fl-container" style="padding:1em;">
+    <div>RESULT:<span id="result_span"></span></div>
+  </div>
+
+  <script src='js/main.js'></script>
 </body>
 
 </html>
