@@ -1,2 +1,2 @@
 # rsp-game
-rock scissor paper game using Javascript learning project
+Rock Scissor Paper game using Javascript  HMTL and CSS.. Learning project
