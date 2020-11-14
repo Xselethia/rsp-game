@@ -1,9 +1,10 @@
-(function () { // HTML(DOM) ready
-    function myFunction(){
-        alert("I come from javascript function")
-    }
 
-    //call function
-    myFunction()
-
-})()
+function rockClicked() {
+  console.log("You choose 'Rock'")
+}
+function paperClicked() {
+  console.log("You choose 'Paper'")
+}
+function scissorsClicked() {
+  console.log("You choose 'Scissors'")
+}
