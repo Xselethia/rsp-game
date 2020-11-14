@@ -6,6 +6,7 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <title>Rock-Scissors-Paper Game</title>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/animation.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
 </head>
 
@@ -14,19 +15,39 @@
 
 
   <div class="fl-container">
-    <div class="fl-button">
-      <div class="fl-scissors" onclick="userClicked('Rock')"></div>
-      <!-- <button onclick="userClicked('Rock')">ROCK</button> -->
+    <div class="fl-1 user-icons">
+      <div class="fl-button user-icon">
+        <div class="fl-rock w-5em" onclick="userClicked('Rock')"></div>
+      </div>
+      <div class="fl-button user-icon">
+        <div class="fl-paper w-5em" onclick="userClicked('Paper')"></div>
+      </div>
+      <div class="fl-button user-icon">
+        <div class="fl-scissors w-5em" onclick="userClicked('Scissors')"></div>
+      </div>
     </div>
-    <div class="fl-button">
-      <div class="fl-scissors" onclick="userClicked('Paper')"></div>
-      <!-- <button onclick="userClicked('Paper')">PAPER</button> -->
+
+    <div class="fl-1 middle ">
+      <div id="user_selection" class="active w-8em"></div>
+      <div class="fl-button vs-text">VS</div>
+      <div id="ai_selection" class="fl-paper active ai-icon w-8em"></div>
     </div>
-    <div class="fl-button">
-      <div class="fl-scissors" onclick="userClicked('Scissors')"></div>
-      <!-- <button onclick="userClicked('Scissors')">SCISSORS</button> -->
+
+    <div class="fl-1 ai-icons">
+      <div class="fl-button">
+        <div class="fl-rock w-5em ai-icon"></div>
+      </div>
+      <div class="fl-button">
+        <div class="fl-paper w-5em ai-icon"></div>
+      </div>
+      <div class="fl-button">
+        <div class="fl-scissors w-5em ai-icon"></div>
+      </div>
     </div>
+
   </div>
+
+
   <div class="fl-container" style="padding:1em;">
     <div> AI CHOICE : <span id="ai_choice_span"></span>
     </div>

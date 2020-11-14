@@ -1,10 +1,12 @@
 const aiChoicePool = ["Rock", "Paper", "Scissors"]
-function userClicked(params) {
-  console.log("You choose " + params)
+function userClicked(selected) {
+  console.log("You choose " + selected)
+  initUserAnimation(selected)
   const randomNumber = Math.floor(Math.random() * 3)
   console.log("AI chooses:" + aiChoicePool[randomNumber])
   document.getElementById("ai_choice_span").innerHTML = aiChoicePool[randomNumber];
-  const result = compareResults(params, aiChoicePool[randomNumber])
+
+  const result = compareResults(selected, aiChoicePool[randomNumber])
   document.getElementById("result_span").innerHTML = result;
 }
 function compareResults(userData, aiData) {
@@ -30,4 +32,14 @@ function compareResults(userData, aiData) {
     console.log("You win!")
     return userWin;
   }
+}
+function initUserAnimation(selection){
+document.getElementById('user_selection').classList.remove("fl-rock","fl-paper","fl-scissors","slide-in-fwd-left")
+  const className="fl-"+selection.toLowerCase()
+  setTimeout(() => {
+    document.getElementById('user_selection').classList.add(className,"slide-in-fwd-left")
+  }, 100);
+
+
+
 }
