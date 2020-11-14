@@ -1,0 +1,10 @@
+.fl-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.fl-button {
+    margin: 1em;
+    padding: 1em;
+    size: 10em;
+}
