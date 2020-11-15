@@ -12,16 +12,13 @@ function userClicked(selected) {
 
   //initialize ai animations
   initAiAnimation(randomChoice)
-  
+
   //compare choices
   const result = compareResults(selected, randomChoice)
   // setTimeout(() => {
   //   alert(result)
   // }, 300);
-
-  document.getElementById("result_span").innerHTML = result;
-
-  initResultAnimation()
+  handleResult(result)
 }
 
 function compareResults(userData, aiData) {
@@ -66,13 +63,13 @@ function initAiAnimation(aiChoice) {
   }, 100);
 }
 
-function initResultAnimation() {
+function handleResult(input) {
+  document.getElementById("result_span").innerHTML = ""
   document.getElementById("result_span").classList.remove("text-focus-in")
   setTimeout(() => {
+    document.getElementById("result_span").innerHTML = input;
     document.getElementById("result_span").classList.add("text-focus-in")
   }, 100);
-
-
 }
 
 function getRandomAiChoice() {
