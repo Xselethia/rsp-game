@@ -108,3 +108,8 @@ div.user-icon>.fl-paper:hover {
         -webkit-animation: slide-in-fwd-right .5s cubic-bezier(.25, .46, .45, .94) both;
         animation: slide-in-fwd-right .5s cubic-bezier(.25, .46, .45, .94) both
 }
+
+.text-focus-in {
+        -webkit-animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both;
+        animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both
+}

@@ -8,11 +8,11 @@ function userClicked(selected) {
 
   // get random choice
   const randomChoice = getRandomAiChoice();
-  document.getElementById("ai_choice_span").innerHTML = randomChoice;
+  // document.getElementById("ai_choice_span").innerHTML = randomChoice;
 
   //initialize ai animations
   initAiAnimation(randomChoice)
-
+  
   //compare choices
   const result = compareResults(selected, randomChoice)
   // setTimeout(() => {
@@ -20,14 +20,17 @@ function userClicked(selected) {
   // }, 300);
 
   document.getElementById("result_span").innerHTML = result;
+
+  initResultAnimation()
 }
 
 function compareResults(userData, aiData) {
   const aiWin = "You Lose!";
   const userWin = "You win!";
+  const draw = "Draw";
   if (userData === aiData) {
     console.log("Draw!")
-    return "Draw"
+    return draw;
   }
   if (
     (userData === "Rock" && aiData === "Paper") ||
@@ -61,6 +64,15 @@ function initAiAnimation(aiChoice) {
   setTimeout(() => {
     document.getElementById('ai_selection').classList.add(className, "slide-in-fwd-right")
   }, 100);
+}
+
+function initResultAnimation() {
+  document.getElementById("result_span").classList.remove("text-focus-in")
+  setTimeout(() => {
+    document.getElementById("result_span").classList.add("text-focus-in")
+  }, 100);
+
+
 }
 
 function getRandomAiChoice() {
