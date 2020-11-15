@@ -24,7 +24,7 @@ function userClicked(selected) {
 function compareResults(userData, aiData) {
   const aiWin = "You Lose!";
   const userWin = "You win!";
-  const draw = "Draw";
+  const draw = "Draw!";
   if (userData === aiData) {
     console.log("Draw!")
     return draw;
