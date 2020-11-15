@@ -1,14 +1,23 @@
 const aiChoicePool = ["Rock", "Paper", "Scissors"]
+
 function userClicked(selected) {
   console.log("You choose " + selected)
-  initUserAnimation(selected)
-  const randomNumber = Math.floor(Math.random() * 3)
-  console.log("AI chooses:" + aiChoicePool[randomNumber])
-  document.getElementById("ai_choice_span").innerHTML = aiChoicePool[randomNumber];
 
-  const result = compareResults(selected, aiChoicePool[randomNumber])
+  //initialize user animations  
+  initUserAnimation(selected);
+
+  // get random choice
+  const randomChoice = getRandomAiChoice();
+  document.getElementById("ai_choice_span").innerHTML = randomChoice;
+
+  //initialize ai animations
+  initAiAnimation(randomChoice)
+
+  //compare choices
+  const result = compareResults(selected, randomChoice)
   document.getElementById("result_span").innerHTML = result;
 }
+
 function compareResults(userData, aiData) {
   const aiWin = "You Lose!";
   const userWin = "You win!";
@@ -33,13 +42,25 @@ function compareResults(userData, aiData) {
     return userWin;
   }
 }
-function initUserAnimation(selection){
-document.getElementById('user_selection').classList.remove("fl-rock","fl-paper","fl-scissors","slide-in-fwd-left")
-  const className="fl-"+selection.toLowerCase()
+
+function initUserAnimation(selection) {
+  document.getElementById('user_selection').classList.remove("fl-rock", "fl-paper", "fl-scissors", "slide-in-fwd-left")
+  const className = "fl-" + selection.toLowerCase()
   setTimeout(() => {
-    document.getElementById('user_selection').classList.add(className,"slide-in-fwd-left")
+    document.getElementById('user_selection').classList.add(className, "slide-in-fwd-left")
   }, 100);
+}
 
+function initAiAnimation(aiChoice) {
+  document.getElementById('ai_selection').classList.remove("fl-rock", "fl-paper", "fl-scissors", "slide-in-fwd-right")
+  const className = "fl-" + aiChoice.toLowerCase()
+  setTimeout(() => {
+    document.getElementById('ai_selection').classList.add(className, "slide-in-fwd-right")
+  }, 100);
+}
 
-
+function getRandomAiChoice() {
+  const randomNumber = Math.floor(Math.random() * 3)
+  console.log("AI chooses:" + aiChoicePool[randomNumber])
+  return aiChoicePool[randomNumber];
 }
