@@ -11,9 +11,10 @@
 </head>
 
 <body>
+
+
+
   <h1>Choose your button!</h1>
-
-
   <div class="fl-container">
     <div class="fl-1 user-icons">
       <div class="fl-button user-icon">
@@ -27,10 +28,16 @@
       </div>
     </div>
 
-    <div class="fl-1 middle ">
-      <div id="user_selection" class="active w-8em"></div>
-      <div class="fl-button vs-text">VS</div>
-      <div id="ai_selection" class="active ai-icon w-8em"></div>
+    <div class="flex-1 middle ">
+      <div class="fl-container2">
+        <div id="user_selection" class="active w-7em"></div>
+        <div id="ai_selection" class="active ai-icon w-7em"></div>
+      </div>
+      <div class="flex-1">
+        <div class="h-15em " style="text-align:center;">
+          <div id="result_span" class="vs-text" style="padding-top:0.5em"></div>
+        </div>
+      </div>
     </div>
 
     <div class="fl-1 ai-icons">
@@ -51,9 +58,6 @@
   <div class="fl-container" style="padding:1em;">
     <div> AI CHOICE : <span id="ai_choice_span"></span>
     </div>
-  </div>
-  <div class="fl-container" style="padding:1em;">
-    <div>RESULT:<span id="result_span"></span></div>
   </div>
 
   <script src='js/main.js'></script>

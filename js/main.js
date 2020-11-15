@@ -15,6 +15,10 @@ function userClicked(selected) {
 
   //compare choices
   const result = compareResults(selected, randomChoice)
+  // setTimeout(() => {
+  //   alert(result)
+  // }, 300);
+
   document.getElementById("result_span").innerHTML = result;
 }
 
