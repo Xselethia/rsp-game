@@ -35,8 +35,10 @@
 }
 
 .vs-text {
-        font-weight: bold;
+        /* font-weight: bold; */
         font-size: 5em;
+        font-family: 'Fredericka the Great',
+                cursive;
 }
 
 
@@ -83,6 +85,7 @@
 
 .ai-icons {
         flex-direction: column;
+        align-items: center;
 }
 
 .ai-icon {
