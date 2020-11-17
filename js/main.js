@@ -1,33 +1,80 @@
-const aiChoicePool = [
-  {
-    animationClass:"fl-rock",
-    text:"Rock"
-  }, 
-  {
-    animationClass:"fl-paper",
-    text:"Paper"
+const choices = [{
+    id: 1,
+    animationClass: "fl-rock",
+    text: "Rock",
+    compare: function compare(item) {
+      debugger;
+      if (item.text === this.text) {
+        return {
+          text: "Draw",
+          animationClass: "fl-draw"
+        }
+      }
+      if (item.text === "Paper") {
+        return item;
+      }
+      if (item.text === "Scissors") {
+        return this;
+      }
+    }
   },
-   {
-     animationClass:"fl-scissors",
-     text:"Scissors"
-   }
-  ]
+  {
+    id: 2,
+    animationClass: "fl-paper",
+    text: "Paper",
+    compare: function compare(item) {
+      if (item.text === this.text) {
+        return {
+          text: "Draw",
+          animationClass: "fl-draw"
+        }
+      }
+      if (item.text === "Rock") {
+        return this;
+      }
+      if (item.text === "Scissors") {
+        return item;
+      }
+    }
+  },
+  {
+    id: 3,
+    animationClass: "fl-scissors",
+    text: "Scissors",
+    compare: function compare(item) {
+      if (item.text === this.text) {
+        return {
+          text: "Draw",
+          animationClass: "fl-draw"
+        }
+      }
+      if (item.text === "Rock") {
+        return item;
+      }
+      if (item.text === "Paper") {
+        return this;
+      }
+    }
+  }
+]
 
-function userClicked(selected) {
-  console.log("You choose " + selected)
+function userClicked(selectedId) {
+  const userChoice = choices.find(t => t.id === selectedId);
+  console.log("You choose " + selectedId)
 
   //initialize user animations  
-  initUserAnimation(selected);
+  initUserAnimation(userChoice);
 
   // get random choice
-  const randomChoice = getRandomAiChoice();
+  const aiChoice = getRandomAiChoice();
   // document.getElementById("ai_choice_span").innerHTML = randomChoice;
 
   //initialize ai animations
-  initAiAnimation(randomChoice)
+  initAiAnimation(aiChoice)
 
   //compare choices
-  const result = compareResults(selected, randomChoice)
+  const result = userChoice.compare(aiChoice);
+  //compareResults(userChoice, aiChoice)
   // setTimeout(() => {
   //   alert(result)
   // }, 300);
@@ -36,7 +83,7 @@ function userClicked(selected) {
 
 function compareResults(userData, aiData) {
   debugger;
-  let aiWin ="You Lose!"
+  let aiWin = "You Lose!"
   const userWin = "You win!";
   const draw = "Draw!";
   if (userData === aiData) {
@@ -63,24 +110,19 @@ function compareResults(userData, aiData) {
 
 function initUserAnimation(selection) {
   document.getElementById('user_selection').classList.remove("fl-rock", "fl-paper", "fl-scissors", "slide-in-fwd-left")
-  const className = "fl-" + selection.toLowerCase()
   setTimeout(() => {
-    document.getElementById('user_selection').classList.add(className, "slide-in-fwd-left")
+    document.getElementById('user_selection').classList.add(selection.animationClass, "slide-in-fwd-left")
   }, 100);
 }
 
 function initAiAnimation(aiChoice) {
   document.getElementById('ai_selection').classList.remove("fl-rock", "fl-paper", "fl-scissors", "slide-in-fwd-right")
-  const className = "fl-" + aiChoice.toLowerCase()
   setTimeout(() => {
-    document.getElementById('ai_selection').classList.add(className, "slide-in-fwd-right")
+    document.getElementById('ai_selection').classList.add(aiChoice.animationClass, "slide-in-fwd-right")
   }, 100);
 }
 
 function handleResult(input) {
-  if (input===) {
-    
-  }
   document.getElementById("result_span").innerHTML = ""
   document.getElementById("result_span").classList.remove("text-focus-in")
   setTimeout(() => {
@@ -91,6 +133,7 @@ function handleResult(input) {
 
 function getRandomAiChoice() {
   const randomNumber = Math.floor(Math.random() * 3)
-  console.log("AI chooses:" + aiChoicePool[randomNumber])
-  return aiChoicePool[randomNumber];
+  console.log("AI chooses:" + choices[randomNumber]);
+  const aiChoice = choices[randomNumber];
+  return aiChoice;
 }
