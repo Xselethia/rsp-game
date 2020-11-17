@@ -1,3 +1,4 @@
+let locked = false;
 const results = [{
   text: "DRAW!",
   cssClass: "fl-draw"
@@ -98,6 +99,10 @@ const choices = [{
 ]
 
 function userClicked(selectedId) {
+  if (locked === true) {
+    return;
+  }
+  locked = true;
   const userChoice = choices.find(t => t.id === selectedId);
 
   //initialize user animations  
@@ -111,7 +116,10 @@ function userClicked(selectedId) {
 
   //compare choices
   const result = userChoice.compare(aiChoice);
-  handleResult(result)
+  handleResult(result);
+  setTimeout(() => {
+    locked = false;
+  }, 3000);
 }
 
 function initUserAnimation(selection) {
