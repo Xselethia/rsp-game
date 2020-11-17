@@ -3,7 +3,6 @@ const choices = [{
     animationClass: "fl-rock",
     text: "Rock",
     compare: function compare(item) {
-      debugger;
       if (item.text === this.text) {
         return {
           text: "Draw",
@@ -123,9 +122,11 @@ function initAiAnimation(aiChoice) {
 }
 
 function handleResult(input) {
+  debugger;
   document.getElementById("result_span").innerHTML = ""
   document.getElementById("result_span").classList.remove("text-focus-in")
   setTimeout(() => {
+    debugger;
     document.getElementById("result_span").innerHTML = input;
     document.getElementById("result_span").classList.add("text-focus-in")
   }, 100);
