@@ -1,28 +1,39 @@
 const results = [{
-    text: "DRAW!",
-    cssClass: "fl-draw"
-  },
-  {
-    text: "AI WINS!",
-    cssClass: "fl-ai-wins"
-  }, {
-    text: "YOU WIN!",
-    cssClass: "fl-user-wins"
-  }
-]
+  text: "DRAW!",
+  cssClass: "fl-draw"
+}, {
+  text: "AI WINS!",
+  cssClass: "fl-ai-wins",
+}, {
+  text: "YOU WIN!",
+  cssClass: "fl-user-wins"
+}]
 const choices = [{
     id: 1,
     animationClass: "fl-rock",
     text: "Rock",
+    audio: "./audio/rock.mp3",
     compare: function compare(item) {
       if (item.text === this.text) {
         return results[0];
       }
       if (item.text === "Paper") {
-        return results[1];
+        let result = {
+          ...results[1],
+          ...{
+            item: item
+          }
+        };
+        return result;
       }
       if (item.text === "Scissors") {
-        return results[2];
+        let result = {
+          ...results[2],
+          ...{
+            item: item
+          }
+        };
+        return result;
       }
     }
   },
@@ -30,15 +41,28 @@ const choices = [{
     id: 2,
     animationClass: "fl-paper",
     text: "Paper",
+    audio: "./audio/paper.mp3",
     compare: function compare(item) {
       if (item.text === this.text) {
         return results[0];
       }
       if (item.text === "Rock") {
-        return results[2];
+        let result = {
+          ...results[2],
+          ...{
+            item: item
+          }
+        };
+        return result;
       }
       if (item.text === "Scissors") {
-        return results[1];
+        let result = {
+          ...results[1],
+          ...{
+            item: item
+          }
+        };
+        return result;
       }
     }
   },
@@ -46,15 +70,28 @@ const choices = [{
     id: 3,
     animationClass: "fl-scissors",
     text: "Scissors",
+    audio: "./audio/scissors.mp3",
     compare: function compare(item) {
       if (item.text === this.text) {
         return results[0];
       }
       if (item.text === "Rock") {
-        return results[1];
+        let result = {
+          ...results[1],
+          ...{
+            item: item
+          }
+        };
+        return result;
       }
       if (item.text === "Paper") {
-        return results[2];
+        let result = {
+          ...results[2],
+          ...{
+            item: item
+          }
+        };
+        return result;
       }
     }
   }
@@ -80,7 +117,9 @@ function userClicked(selectedId) {
 function initUserAnimation(selection) {
   document.getElementById('user_selection').classList.remove("fl-rock", "fl-paper", "fl-scissors", "slide-in-fwd-left")
   setTimeout(() => {
-    document.getElementById('user_selection').classList.add(selection.animationClass, "slide-in-fwd-left")
+    const audio = new Audio(selection.audio);
+    audio.play();
+    document.getElementById('user_selection').classList.add(selection.animationClass, "slide-in-fwd-left");
   }, 100);
 }
 
@@ -96,7 +135,7 @@ function handleResult(input) {
   document.getElementById("result_span").classList.remove("text-focus-in")
   setTimeout(() => {
     document.getElementById("result_span").innerHTML = input.text;
-    document.getElementById("result_span").classList.add("text-focus-in")
+    document.getElementById("result_span").classList.add("text-focus-in");
   }, 100);
 }
 
