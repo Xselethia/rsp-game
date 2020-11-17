@@ -1,4 +1,17 @@
-const aiChoicePool = ["Rock", "Paper", "Scissors"]
+const aiChoicePool = [
+  {
+    animationClass:"fl-rock",
+    text:"Rock"
+  }, 
+  {
+    animationClass:"fl-paper",
+    text:"Paper"
+  },
+   {
+     animationClass:"fl-scissors",
+     text:"Scissors"
+   }
+  ]
 
 function userClicked(selected) {
   console.log("You choose " + selected)
@@ -22,7 +35,8 @@ function userClicked(selected) {
 }
 
 function compareResults(userData, aiData) {
-  const aiWin = "You Lose!";
+  debugger;
+  let aiWin ="You Lose!"
   const userWin = "You win!";
   const draw = "Draw!";
   if (userData === aiData) {
@@ -64,6 +78,9 @@ function initAiAnimation(aiChoice) {
 }
 
 function handleResult(input) {
+  if (input===) {
+    
+  }
   document.getElementById("result_span").innerHTML = ""
   document.getElementById("result_span").classList.remove("text-focus-in")
   setTimeout(() => {
