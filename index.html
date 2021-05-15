@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' type='text/css' media='screen' href='css/animation.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='css/common.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/main-grid.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <title>Document</title>
@@ -19,22 +20,20 @@
 </head>
 
 <body>
-  <div class="gagalin-font">
-    <div class="grid-container">
-      <div class="welcome welcome-msg">WELCOME TO THE RSP GAME</div>
-
-      <div class="input" style="padding-top: 5%;">
-        <div class="options" style="text-align: end;"><i class="fas fa-cog"></i></div>
-        <div class="color"></div>
-        <div class="user-input"><input id="username" type="text"></div>
-        <div class="user-label"><label for="username">username</label></div>
-        <div class="color-label"><label for="user_color">User Color</label></div>
-        <div class="color-input"><input type="color" id="user_color" name="user_color" value="#e66465"></div>
+  <div class="grid-container gagalin-font">
+    <div class="welcome welcome-msg">WELCOME TO THE RSP GAME</div>
+    <div class="input" style="padding-top: 4em;">
+      <div class="user-label username-text"><label for="username">username</label></div>
+      <div class="user-input username-text">
+        <input class="gagalin-font" id="username" type="text" style="font-size: 1em;">
       </div>
-      <div class="start">
-        <div class="button-box">
-          <a onclick="setUsername()" href="rsp-game.html" class="btn cool-button">Start</a>
-        </div>
+      <div class="options username-text" style="text-align: end;"><i class="fas fa-cog"></i></div>
+      <!-- <div class="color-label username-text"><label for="user_color">User Color</label></div>
+      <div class="color-input"><input class="gagalin-font" id="usercolor" type="color" style="font-size: 1em;"></div> -->
+    </div>
+    <div class="start">
+      <div class="button-box">
+        <a onclick="setUsername()" href="rsp-game.html" class="btn cool-button">Start</a>
       </div>
     </div>
   </div>

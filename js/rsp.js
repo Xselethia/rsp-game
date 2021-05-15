@@ -2,16 +2,24 @@ let username = localStorage.getItem("username");
 document.getElementById("user1_name").innerHTML = username
 document.getElementById("user2_name").innerHTML = "AI"
 
+let userScore = 0;
+document.getElementById("user1_score").innerHTML = userScore;
+let aiScore = 0;
+document.getElementById("user2_score").innerHTML = aiScore;
+
 let locked = false;
 const results = [{
   text: "DRAW!",
-  cssClass: "fl-draw"
+  cssClass: "fl-draw",
+  winner: 0
 }, {
   text: "AI WINS!",
   cssClass: "fl-ai-wins",
+  winner: 2
 }, {
   text: "YOU WIN!",
-  cssClass: "fl-user-wins"
+  cssClass: "fl-user-wins",
+  winner: 1
 }]
 const choices = [{
     id: 1,
@@ -149,6 +157,16 @@ function handleResult(input) {
     document.getElementById("result_span").innerHTML = input.text;
     document.getElementById("result_span").classList.add("text-focus-in");
   }, 100);
+
+  setTimeout(() => {
+    if (input.winner == 1) { //user1 wins
+      userScore += 1;
+      document.getElementById("user1_score").innerHTML = userScore;
+    } else if (input.winner == 2) { //AI/user2 wins
+      aiScore += 1;
+      document.getElementById("user2_score").innerHTML = aiScore;
+    }
+  }, 500);
 }
 
 function getRandomAiChoice() {

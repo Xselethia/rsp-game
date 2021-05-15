@@ -1,3 +1,6 @@
+/*
+  https://grid.layoutit.com/?id=ZPdee45
+*/
 .grid-container {
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
@@ -9,10 +12,6 @@
     ". . . .";
 }
 
-.game-container {
-  grid-area: game-container;
-}
-
 .user1-name-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -20,12 +19,16 @@
   gap: 0px 0px;
   grid-template-areas:
     ". . ."
-    "user1-name user1-name user1-name";
+    "user1-name user1-name user1-score";
   grid-area: user1-name-container;
 }
 
 .user1-name {
   grid-area: user1-name;
+}
+
+.user1-score {
+  grid-area: user1-score;
 }
 
 .user2-name-container {
@@ -35,10 +38,18 @@
   gap: 0px 0px;
   grid-template-areas:
     ". . ."
-    "user2-name user2-name user2-name";
+    "user2-score user2-name user2-name";
   grid-area: user2-name-container;
 }
 
 .user2-name {
   grid-area: user2-name;
+}
+
+.user2-score {
+  grid-area: user2-score;
+}
+
+.game-container {
+  grid-area: game-container;
 }

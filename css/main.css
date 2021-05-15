@@ -1,85 +1,8 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.4fr 1.5fr 1fr 1fr;
-  gap: 1% 0%;
-  grid-template-areas: ". . . ."
-    ". welcome welcome ."
-    ". input input ."
-    ". start start .";
-}
-
-.welcome {
-  grid-area: welcome;
-}
-
-.start {
-  grid-area: start;
-}
-
-.input {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "user-input user-input options"
-    "color color color";
-  grid-area: input;
-}
-
-.input {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 0px 0px;
-  grid-area: input;
-}
-
-.options {
-  grid-area: 1 / 3 / 2 / 4;
-}
-
-.color {
-  grid-area: 2 / 1 / 3 / 4;
-}
-
-.user-input {
-  grid-area: 1 / 2 / 2 / 3;
-}
-
-.user-label {
-  grid-area: 1 / 1 / 2 / 2;
-}
-
-.color-label {
-  grid-area: 2 / 1 / 3 / 2;
-}
-
-.color-input {
-  grid-area: 2 / 2 / 3 / 3;
-}
-
-
-
-
 .welcome-msg {
-  font-size: xxx-large;
+  font-size: 6em;
   text-align: center;
 }
 
-
-
-/* .btn:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg,
-      transparent,
-      rgba(146, 148, 248, 0.4),
-      transparent);
-  transition: all 650ms;
-} */
+.username-text {
+  font-size: 2em;
+}

@@ -121,5 +121,11 @@ div.user-icon>.fl-paper:hover {
 .username-text {
         text-align: center;
         align-self: center;
+        font-size: 2em;
+}
 
+.userscore-text {
+        text-align: center;
+        align-self: center;
+        font-size: 4em;
 }
