@@ -1,118 +1,130 @@
-.fl-container2 {
-        display: flex;
-        justify-content: space-evenly;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.4fr 1.5fr 1fr 1fr;
+  gap: 1% 0%;
+  grid-template-areas: ". . . ."
+    ". welcome welcome ."
+    ". input input ."
+    ". start start .";
 }
 
-.fl-container {
-        display: flex;
-        justify-content: flex-start;
+.welcome {
+  grid-area: welcome;
 }
 
-.flex-1 {
-        flex: 1;
+.start {
+  grid-area: start;
 }
 
-.fl-1 {
-        justify-content: space-evenly;
-        display: inline-flex;
-        flex: 1;
+.input {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "user-input user-input options"
+    "color color color";
+  grid-area: input;
 }
 
-.w-5em {
-        width: 5em;
+.input {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-area: input;
 }
 
-.w-7em {
-        width: 7em;
+.options {
+  grid-area: 1 / 3 / 2 / 4;
 }
 
-.w-8em {
-        width: 8em;
+.color {
+  grid-area: 2 / 1 / 3 / 4;
 }
 
-.h-15em {
-        height: 15em;
+.user-input {
+  grid-area: 1 / 2 / 2 / 3;
 }
 
-.vs-text {
-        /* font-weight: bold; */
-        font-size: 5em;
-        font-family: 'Fredericka the Great',
-                cursive;
+.user-label {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.color-label {
+  grid-area: 2 / 1 / 3 / 2;
+}
+
+.color-input {
+  grid-area: 2 / 2 / 3 / 3;
 }
 
 
-.in-active-user {
-        opacity: 0.5;
+
+.gagalin-font {
+  font-family: Gagalin;
 }
 
-.in-active-ai {
-        opacity: 0.2;
+.welcome-msg {
+  font-size: xxx-large;
+  text-align: center;
 }
 
-.active {
-        opacity: 1 !important;
+.button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5%;
 }
 
-.hidden {
-        display: none;
+a {
+  font-size: 1.5rem;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
 }
 
-.fl-button {
-        /* size: 10em; */
-        /* border-style: solid; */
+.btn {
+  text-decoration: none;
+  /* border: 1px solid rgb(146, 148, 248); */
+  position: relative;
+  overflow: hidden;
+  color: #000;
 }
 
-.fl-scissors {
-        content: url('../images/scissors.png');
-        transition: transform .2s;
+.btn:hover {
+  box-shadow: 1px 1px 25px 10px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4); */
 }
 
-.fl-paper {
-        content: url('../images/paper.png');
-        transition: transform .2s;
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(114, 114, 117, 0.4),
+      transparent);
+  transition: all 650ms;
 }
 
-.fl-rock {
-        content: url('../images/rock.png');
-        transition: transform .2s;
+.btn:hover:before {
+  left: 100%;
 }
 
-.user-icons {
-        flex-direction: column;
-        align-items: center;
-}
-
-.ai-icons {
-        flex-direction: column;
-        align-items: center;
-}
-
-.ai-icon {
-        filter: grayscale();
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-}
-
-div.user-icon>.fl-scissors:hover,
-div.user-icon>.fl-rock:hover,
-div.user-icon>.fl-paper:hover {
-        opacity: 1;
-        transform: scale(1.3);
-        filter: drop-shadow(2px 4px 6px black)
-}
-
-.slide-in-fwd-left {
-        -webkit-animation: slide-in-fwd-left .5s cubic-bezier(.25, .46, .45, .94) both;
-        animation: slide-in-fwd-left .5s cubic-bezier(.25, .46, .45, .94) both
-}
-
-.slide-in-fwd-right {
-        -webkit-animation: slide-in-fwd-right .5s cubic-bezier(.25, .46, .45, .94) both;
-        animation: slide-in-fwd-right .5s cubic-bezier(.25, .46, .45, .94) both
-}
-
-.text-focus-in {
-        -webkit-animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both;
-        animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both
-}
+/* .btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(146, 148, 248, 0.4),
+      transparent);
+  transition: all 650ms;
+} */
