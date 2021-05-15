@@ -1,0 +1,118 @@
+.fl-container2 {
+        display: flex;
+        justify-content: space-evenly;
+}
+
+.fl-container {
+        display: flex;
+        justify-content: flex-start;
+}
+
+.flex-1 {
+        flex: 1;
+}
+
+.fl-1 {
+        justify-content: space-evenly;
+        display: inline-flex;
+        flex: 1;
+}
+
+.w-5em {
+        width: 5em;
+}
+
+.w-7em {
+        width: 7em;
+}
+
+.w-8em {
+        width: 8em;
+}
+
+.h-15em {
+        height: 15em;
+}
+
+.vs-text {
+        /* font-weight: bold; */
+        font-size: 5em;
+        font-family: 'Fredericka the Great',
+                cursive;
+}
+
+
+.in-active-user {
+        opacity: 0.5;
+}
+
+.in-active-ai {
+        opacity: 0.2;
+}
+
+.active {
+        opacity: 1 !important;
+}
+
+.hidden {
+        display: none;
+}
+
+.fl-button {
+        /* size: 10em; */
+        /* border-style: solid; */
+}
+
+.fl-scissors {
+        content: url('../images/scissors.png');
+        transition: transform .2s;
+}
+
+.fl-paper {
+        content: url('../images/paper.png');
+        transition: transform .2s;
+}
+
+.fl-rock {
+        content: url('../images/rock.png');
+        transition: transform .2s;
+}
+
+.user-icons {
+        flex-direction: column;
+        align-items: center;
+}
+
+.ai-icons {
+        flex-direction: column;
+        align-items: center;
+}
+
+.ai-icon {
+        filter: grayscale();
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+}
+
+div.user-icon>.fl-scissors:hover,
+div.user-icon>.fl-rock:hover,
+div.user-icon>.fl-paper:hover {
+        opacity: 1;
+        transform: scale(1.3);
+        filter: drop-shadow(2px 4px 6px black)
+}
+
+.slide-in-fwd-left {
+        -webkit-animation: slide-in-fwd-left .5s cubic-bezier(.25, .46, .45, .94) both;
+        animation: slide-in-fwd-left .5s cubic-bezier(.25, .46, .45, .94) both
+}
+
+.slide-in-fwd-right {
+        -webkit-animation: slide-in-fwd-right .5s cubic-bezier(.25, .46, .45, .94) both;
+        animation: slide-in-fwd-right .5s cubic-bezier(.25, .46, .45, .94) both
+}
+
+.text-focus-in {
+        -webkit-animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both;
+        animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both
+}

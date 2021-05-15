@@ -1,74 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset='utf-8'>
-  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-  <title>Rock-Scissors-Paper Game</title>
-  <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' type='text/css' media='screen' href='css/animation.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Document</title>
+  <style>
+    @font-face {
+      font-family: Gagalin;
+      src: local('Gagalin-Regular'), url('./fonts/Gagalin/TTF/Gagalin-Regular.ttf') format('woff2');
+    }
+  </style>
 </head>
 
 <body>
-  <div class="fl-container">
-    <div class="fl-1 user-icons">
-      <div class="fl-button user-icon">
-        <div class="fl-rock in-active-user w-5em" onclick="userClicked(1)"></div>
-      </div>
-      <div class="fl-button user-icon">
-        <div class="fl-paper in-active-user w-5em" onclick="userClicked(2)"></div>
-      </div>
-      <div class="fl-button user-icon">
-        <div class="fl-scissors in-active-user w-5em" onclick="userClicked(3)"></div>
-      </div>
-    </div>
+  <div class="gagalin-font">
+    <div class="grid-container">
+      <div class="welcome welcome-msg">WELCOME TO THE RSP GAME</div>
 
-    <div class="flex-1 middle ">
-      <div class="fl-container2">
-        <div id="user_selection" class="active w-7em"></div>
-        <div id="ai_selection" class="active ai-icon w-7em"></div>
+      <div class="input" style="padding-top: 5%;">
+        <div class="options" style="text-align: end;"><i class="fas fa-cog"></i></div>
+        <div class="color"></div>
+        <div class="user-input"><input id="username" type="text"></div>
+        <div class="user-label"><label for="username">username</label></div>
+        <div class="color-label"><label for="user_color">User Color</label></div>
+        <div class="color-input"><input type="color" id="user_color" name="user_color" value="#e66465"></div>
       </div>
-      <div class="flex-1">
-        <div class="h-15em " style="text-align:center;">
-          <div id="result_span" class="vs-text" style="padding-top:0.5em"></div>
+      <div class="start">
+        <div class="button-box">
+          <a href="rsp-game.html" class="btn">Start</a>
         </div>
       </div>
     </div>
 
-    <div class="fl-1 ai-icons">
-      <div class="fl-button">
-        <div class="fl-rock in-active-ai w-5em ai-icon"></div>
-      </div>
-      <div class="fl-button">
-        <div class="fl-paper in-active-ai w-5em ai-icon"></div>
-      </div>
-      <div class="fl-button">
-        <div class="fl-scissors in-active-ai w-5em ai-icon"></div>
-      </div>
-    </div>
-    <div class="table">
-      <form class="tr" method="post" action="blah.html">
-          <span class="td"><input type="text"/></span>
-          <span class="td"><input type="text"/></span>
-      </form>
-      <div class="tr">
-          <span class="td">(cell data)</span>
-          <span class="td">(cell data)</span>
-      </div>
-
-    
-
   </div>
-
-  <script src='js/main.js'></script>
 </body>
-<footer>
-  <!-- <div>Animation by:http://animista.net</div>
-  <div>Images by:xxx</div> -->
-</footer>
 
 </html>
