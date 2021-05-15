@@ -11,6 +11,7 @@
   <link rel='stylesheet' type='text/css' media='screen' href='css/animation.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='css/common.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='css/rsp.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/rsp-grid.css'>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
 </head>
 
@@ -19,6 +20,16 @@
     <a href="index.html" class="btn cool-button">Main Menu</a>
   </div>
   <div class="grid-container">
+    <div class="user1-name-container">
+      <div class="user1-name username-text">
+        <label id="user1_name">{{user1-name}}</label>
+      </div>
+    </div>
+    <div class="user2-name-container">
+      <div class="user2-name username-text">
+        <label id="user2_name">{{user2-name}}</label>
+      </div>
+    </div>
     <div class="game-container">
       <div class="fl-container">
         <div class="fl-1 user-icons">
@@ -59,7 +70,6 @@
       </div>
     </div>
   </div>
-
 
   <script src='js/rsp.js'></script>
 </body>

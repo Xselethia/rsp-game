@@ -1,0 +1,44 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 0.5fr;
+  grid-template-rows: 1fr 2fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". user1-name-container user2-name-container ."
+    ". game-container game-container ."
+    ". . . .";
+}
+
+.game-container {
+  grid-area: game-container;
+}
+
+.user1-name-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    "user1-name user1-name user1-name";
+  grid-area: user1-name-container;
+}
+
+.user1-name {
+  grid-area: user1-name;
+}
+
+.user2-name-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". . ."
+    "user2-name user2-name user2-name";
+  grid-area: user2-name-container;
+}
+
+.user2-name {
+  grid-area: user2-name;
+}

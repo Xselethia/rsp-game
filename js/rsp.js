@@ -1,3 +1,7 @@
+let username = localStorage.getItem("username");
+document.getElementById("user1_name").innerHTML = username
+document.getElementById("user2_name").innerHTML = "AI"
+
 let locked = false;
 const results = [{
   text: "DRAW!",
