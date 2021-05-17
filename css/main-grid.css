@@ -1,0 +1,53 @@
+/*
+  https: //grid.layoutit.com/?id=dgj07YH
+*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr;
+  gap: 0em 0em;
+  grid-template-areas:
+    ". . . ."
+    ". welcome welcome ."
+    ". input input ."
+    ". start start .";
+}
+
+.welcome {
+  grid-area: welcome;
+}
+
+.input {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "user-label user-input options"
+    "color-label color-input .";
+  grid-area: input;
+}
+
+.user-label {
+  grid-area: user-label;
+}
+
+.user-input {
+  grid-area: user-input;
+}
+
+.options {
+  grid-area: options;
+}
+
+.color-label {
+  grid-area: color-label;
+}
+
+.color-input {
+  grid-area: color-input;
+}
+
+.start {
+  grid-area: start;
+}

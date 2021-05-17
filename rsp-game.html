@@ -9,58 +9,74 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
   <link rel='stylesheet' type='text/css' media='screen' href='css/animation.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/common.css'>
   <link rel='stylesheet' type='text/css' media='screen' href='css/rsp.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/rsp-grid.css'>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js"></script>
 </head>
 
-<body>
-  <div class="fl-container">
-    <div class="fl-1 user-icons">
-      <div class="fl-button user-icon">
-        <div class="fl-rock in-active-user w-5em" onclick="userClicked(1)"></div>
+<body class="gagalin-font">
+  <div class="button-box">
+    <a href="index.html" class="btn cool-button">Main Menu</a>
+  </div>
+
+  <div class="grid-container">
+    <div class="user1-name-container">
+      <div class="user1-name username-text">
+        <label id="user1_name">{{user1-name}}</label>
       </div>
-      <div class="fl-button user-icon">
-        <div class="fl-paper in-active-user w-5em" onclick="userClicked(2)"></div>
-      </div>
-      <div class="fl-button user-icon">
-        <div class="fl-scissors in-active-user w-5em" onclick="userClicked(3)"></div>
+      <div class="user1-score userscore-text">
+        <label id="user1_score">{{0}}</label>
       </div>
     </div>
-
-    <div class="flex-1 middle ">
-      <div class="fl-container2">
-        <div id="user_selection" class="active w-7em"></div>
-        <div id="ai_selection" class="active ai-icon w-7em"></div>
+    <div class="user2-name-container">
+      <div class="user2-name username-text">
+        <label id="user2_name">{{user2-name}}</label>
       </div>
-      <div class="flex-1">
-        <div class="h-15em " style="text-align:center;">
-          <div id="result_span" class="vs-text" style="padding-top:0.5em"></div>
+      <div class="user2-score userscore-text">
+        <label id="user2_score">{{0}}</label>
+      </div>
+    </div>
+    <div class="game-container">
+      <div class="fl-container">
+        <div class="fl-1 user-icons">
+          <div class="fl-button user-icon">
+            <div class="fl-rock in-active-user w-5em" onclick="userClicked(1)"></div>
+          </div>
+          <div class="fl-button user-icon">
+            <div class="fl-paper in-active-user w-5em" onclick="userClicked(2)"></div>
+          </div>
+          <div class="fl-button user-icon">
+            <div class="fl-scissors in-active-user w-5em" onclick="userClicked(3)"></div>
+          </div>
+        </div>
+
+        <div class="flex-1 middle ">
+          <div class="fl-container2">
+            <div id="user_selection" class="active w-7em"></div>
+            <div id="ai_selection" class="active ai-icon w-7em"></div>
+          </div>
+          <div class="flex-1">
+            <div class="h-15em " style="text-align:center;">
+              <div id="result_span" class="vs-text" style="padding-top:0.5em"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fl-1 ai-icons">
+          <div class="fl-button">
+            <div class="fl-rock in-active-ai w-5em ai-icon"></div>
+          </div>
+          <div class="fl-button">
+            <div class="fl-paper in-active-ai w-5em ai-icon"></div>
+          </div>
+          <div class="fl-button">
+            <div class="fl-scissors in-active-ai w-5em ai-icon"></div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="fl-1 ai-icons">
-      <div class="fl-button">
-        <div class="fl-rock in-active-ai w-5em ai-icon"></div>
-      </div>
-      <div class="fl-button">
-        <div class="fl-paper in-active-ai w-5em ai-icon"></div>
-      </div>
-      <div class="fl-button">
-        <div class="fl-scissors in-active-ai w-5em ai-icon"></div>
-      </div>
-    </div>
   </div>
-  <!-- <div class="table">
-      <form class="tr" method="post" action="blah.html">
-          <span class="td"><input type="text"/></span>
-          <span class="td"><input type="text"/></span>
-      </form>
-      <div class="tr">
-          <span class="td">(cell data)</span>
-          <span class="td">(cell data)</span>
-      </div>
-  </div> -->
 
   <script src='js/rsp.js'></script>
 </body>

@@ -4,6 +4,7 @@
 }
 
 .fl-container {
+        box-shadow: 0px 0px 0px 6px #000000;
         display: flex;
         justify-content: flex-start;
 }
@@ -115,4 +116,16 @@ div.user-icon>.fl-paper:hover {
 .text-focus-in {
         -webkit-animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both;
         animation: text-focus-in 1s cubic-bezier(.55, .085, .68, .53) both
+}
+
+.username-text {
+        text-align: center;
+        align-self: center;
+        font-size: 2em;
+}
+
+.userscore-text {
+        text-align: center;
+        align-self: center;
+        font-size: 4em;
 }
