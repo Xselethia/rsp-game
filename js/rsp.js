@@ -131,7 +131,7 @@ function userClicked(selectedId) {
   handleResult(result);
   setTimeout(() => {
     locked = false;
-  }, 3000);
+  }, 2000);
 }
 
 function initUserAnimation(selection) {
@@ -166,7 +166,17 @@ function handleResult(input) {
       aiScore += 1;
       document.getElementById("user2_score").innerHTML = aiScore;
     }
-  }, 500);
+  }, 250);
+  setTimeout(() => {
+    if (userScore >= 1 || aiScore >= 1) {
+      endGame();
+    }
+  }, 500)
+}
+
+function endGame() {
+  alert("Game Over");
+  locked = true;
 }
 
 function getRandomAiChoice() {
